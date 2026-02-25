@@ -8,9 +8,7 @@ on:
   issue_comment:
     types: [ created ]
   release:
-    types: [ published ]
-  issue:
-    types: [ opened, edited ]
+    types: [ published ] 
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight
 
