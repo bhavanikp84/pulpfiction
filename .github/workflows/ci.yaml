@@ -1,0 +1,26 @@
+name: GitHub Action CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  issue_comment:
+    types: [ created ]
+  release:
+    types: [ published ]
+  issue:
+    types: [ opened, edited ]
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v5
+      - run: echo "Building the project..."
+      - run: echo "Running tests..."
+      - run: ls -ltra
+      - run: echo  "${{ github.event_name }}"
