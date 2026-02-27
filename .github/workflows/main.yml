@@ -1,9 +1,6 @@
 name: Main Workflow
 
-on: [schedule, workflow_dispatch]
-
-schedule:
-  - cron: '*/2 * * * *' # Runs every day at midnight
+on: workflow_dispatch
 
 jobs:
     A:
