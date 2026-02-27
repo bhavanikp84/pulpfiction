@@ -1,6 +1,12 @@
-name: 
+name: Main Workflow
 
-on: workflow_dispatch
+on: 
+    schedule:
+        - cron: '*/5 * * * *' # Runs every day at midnight
+    workflow_dispatch: # Allows manual triggering of the workflow
+    push:
+        branches:
+            - main
 
 jobs:
     A:
