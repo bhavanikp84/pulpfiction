@@ -19,7 +19,9 @@ jobs:
               uses: actions/script@v6
               with:
                 script: |
-                  console.log("Hello World")
-                  console.log(JSON.stringify(context, null, 2))
+                    echo "Hello World"
+                    echo "$GITHUB_EVENT_NAME"
+                    echo "$SECRET_VALUE"
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                SECRET_VALUE: "THis is a secret value"
