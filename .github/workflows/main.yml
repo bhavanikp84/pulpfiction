@@ -16,10 +16,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v5
+            - name: list_all_files
+              run: ls -ltra
             - name: Run a script
-              uses: actions/bash@v3
-              with:
-                script: echo ${{ env.GREETING }}
+              run: echo ${{ env.GREETING }}
               env:
-                GREETING: "Hello World"
+                    GREETING: "Hello World"
