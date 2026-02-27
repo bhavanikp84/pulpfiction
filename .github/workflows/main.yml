@@ -15,11 +15,11 @@ jobs:
     A:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v5
-            - name: list_all_files
-              run: ls -ltra
-            - name: Run a script
-              run: echo ${{ env.GREETING }}
+            - name: run a script
+              uses: actions/script@v6
+              with:
+                script: |
+                  console.log("Hello World")
+                  console.log(JSON.stringify(context, null, 2))
               env:
-                    GREETING: "Hello World"
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
