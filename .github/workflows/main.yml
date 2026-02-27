@@ -1,3 +1,5 @@
+name: Main Workflow
+
 run-name: CI
 
 on: [push, pull_request]
