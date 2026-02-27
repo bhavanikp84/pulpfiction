@@ -19,8 +19,6 @@ jobs:
           run: echo "This is step 1 of job B"
         - name: Step 2
           run: echo "This is step 2 of job B"
-
-        - uses: actions/checkout@v2
-        - name: Run a script
+       
         - name: list all files
           run: ls -la
