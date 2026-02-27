@@ -1,0 +1,14 @@
+name: GitHub Actions another workflow
+
+on: [push, issues, pull_request, workflow_dispatch]
+
+jobs:
+    A:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "This is another workflow"
+    B:
+        runs-on: ubuntu-latest
+        needs: A
+        steps:
+            - run: echo "This is another workflow and it depends on A"
