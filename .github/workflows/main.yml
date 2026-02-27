@@ -16,12 +16,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: run a script
-              uses: actions/script@v6
-              with:
-                script: |
-                    echo "Hello World"
-                    echo "$GITHUB_EVENT_NAME"
-                    echo "$SECRET_VALUE"
+              run: echo "This is job A" && echo "$VAR1 $VAR2"
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                SECRET_VALUE: "THis is a secret value"
+                VAR1: value1
+                VAR2: value2
