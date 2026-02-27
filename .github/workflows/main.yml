@@ -20,6 +20,7 @@ jobs:
         echo This will fail
         echo "this is a secret: $MY_SECRET"
         echo "This should not be printed in logs"
+        echo "This is actor: $GITHUB_ACTOR"
         exit 0
       env:
         MY_SECRET: "THis is a secret value that should not be exposed in logs"
